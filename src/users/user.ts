@@ -1,5 +1,7 @@
-import { CreateUserParams } from "src/utils/types";
+import { User } from 'src/utils/entities';
+import { CreateUserParams, FindUserParams } from 'src/utils/types';
 
 export interface IUserService {
-    createUser(userParams: CreateUserParams);
+  createUser(userParams: CreateUserParams): Promise<User>;
+  findUser(FindUserParams: Partial<FindUserParams>): Promise<User>;
 }
